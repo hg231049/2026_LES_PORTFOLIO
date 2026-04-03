@@ -12,7 +12,7 @@ setTimeout(function(){
   
   setTimeout(function(){
 	$('.main-visual .scroll-down').addClass('on');
-  }, 4400);
+  }, 4200);
 
 /* 메인 애니메이션 */
 function animateM($item){
