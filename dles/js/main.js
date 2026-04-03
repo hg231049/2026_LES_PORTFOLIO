@@ -8,7 +8,7 @@ setTimeout(function(){
   }, 2800);
   setTimeout(function(){
 	$('.main-visual .main-visual-title .visual-txt-motion > img').addClass('rotate');
-  }, 3200);
+  }, 3000);
   
   setTimeout(function(){
 	$('.main-visual .scroll-down').addClass('on');
