@@ -593,6 +593,7 @@
 .etc-project-wrap .etc-box .prdList {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
   margin: 0 0 0 -4.9%;
 }
 .etc-project-wrap .etc-box .prdList > li {
