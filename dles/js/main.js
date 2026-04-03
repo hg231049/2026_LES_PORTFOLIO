@@ -40,7 +40,7 @@ function mouseleave (){
 	about.setAttribute("src","./dles/img/about-image.png");
 }        
 
-/* etc */
+/* etc 
 let prdSwiper;
 function initSwiper(bool, between, view) {
 	if (typeof(prdSwiper) == 'object') prdSwiper.destroy();
@@ -81,11 +81,11 @@ function mainSizeListener() {
 $(window).resize(function(){
 	mainSizeListener();
 });
-
+*/
 $(document).ready(function(){
 	
 	$(window).scroll(showDiv);
-	mainSizeListener();
+	/*mainSizeListener();*/
 
    /* 메인 슬라이드 배너 */
 	$(".main-visual").css('opacity','1');

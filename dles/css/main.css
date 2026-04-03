@@ -598,11 +598,11 @@
 .etc-project-wrap .etc-box .prdList > li {
   display: flex;
   position: relative;
-  width: 30%;
+  width: 50%;
   margin: 0;
   box-sizing: border-box;
   transition: 0.4s ease-in-out;
-  opacity: 0.6;
+  /*opacity: 0.6;*/
 }
 .etc-project-wrap .etc-box .prdList > li .etc-slide {
   width: 100%;
@@ -614,14 +614,14 @@
 }
 .etc-project-wrap .etc-box .prdList > li .etc-slide .thumbnail .thumb {
   display: block;
-  max-height: 340px;
+  max-height: 507px;
   overflow: hidden;
 }
 .etc-project-wrap .etc-box .prdList > li .etc-slide .thumbnail .thumb img {
   width: 100%;
 }
 .etc-project-wrap .etc-box .prdList > li .etc-slide .description {
-  display: none;
+ 
   padding: 40px 0 0;
   color: var(--sub-color);
   text-align: center;
@@ -750,14 +750,14 @@
 .etc-project-wrap .swiper-rtl .swiper-button-next:after {
   display: none;
 }
-.etc-project-wrap .swiper-control .swiper-button-prev {
+/*.etc-project-wrap .swiper-control .swiper-button-prev {
   left: 0;
   background: url("../img/etc-prev-btn.png") no-repeat 100%;
 }
 .etc-project-wrap .swiper-control .swiper-button-next {
   right: 0;
   background: url("../img/etc-next-btn.png") no-repeat 100%;
-}
+}*/
 
 /* contact */
 .contact-wrap {
@@ -1283,6 +1283,8 @@
   #etc .main-inner {
     padding: 0;
   }
+  .etc-project-wrap .etc-box .prdList > li { width: 100%; padding: 0 20px; }
+  .etc-project-wrap .etc-box .prdList > li .etc-slide .thumbnail .thumb { height: auto; }
   .etc-project-wrap .etc-box .prdList > li .etc-slide .description {
     padding: 20px 0 0;
     text-align: left;
