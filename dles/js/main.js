@@ -1,4 +1,5 @@
 /* 메인비주얼 애니메이션 */
+/*
 setTimeout(function () {
   $(".visual-dimmed").addClass("show");
 }, 100);
@@ -14,6 +15,25 @@ setTimeout(function () {
 setTimeout(function () {
   $(".main-visual .scroll-down").addClass("on");
 }, 4200);
+*/
+/* async/await 방식 */
+const delay = (ms) => new Promise(resolve => setTimeout(resolve,ms));
+async function startVisualAnimation() {
+  await delay(100);
+  $(".visual-dimmed").addClass("show");
+
+  await delay(2700);
+  $(".main-visual .main-visual-title .visual-txt-ani").addClass("active");
+
+  await delay(200);
+  $(".main-visual .main-visual-title .visual-txt-motion > img").addClass("rotate");
+
+  await delay(1200);
+  $(".main-visual .scroll-down").addClass("on");
+
+}
+startVisualAnimation();
+
 
 /* 메인 애니메이션 */
 function animateM($item) {

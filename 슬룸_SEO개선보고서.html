@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>슬룸 SEO · 퍼블리싱 개선 보고서</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&family=Fraunces:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e17;
+    --surface: #111827;
+    --surface2: #1a2235;
+    --border: #1f2d45;
+    --accent: #3b7fff;
+    --accent2: #00d4aa;
+    --accent3: #f59e0b;
+    --text: #e2e8f0;
+    --text-muted: #64748b;
+    --text-dim: #94a3b8;
+    --red: #ef4444;
+    --green: #22c55e;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Noto Sans KR', sans-serif;
+    --display: 'Fraunces', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    padding: 80px 60px 60px;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 70% 20%, rgba(59,127,255,.12) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 20% 80%, rgba(0,212,170,.07) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
+  }
+  .hero-meta span { color: var(--text-muted); }
+  .hero-title {
+    font-family: var(--display);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .hero-title em { font-style: italic; color: var(--accent2); }
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-dim);
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* ── LAYOUT ── */
+  .wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  @media (max-width: 700px) {
+    .hero { padding: 48px 24px 40px; }
+    .wrapper { padding: 0 20px; }
+  }
+
+  section {
+    padding: 56px 0 0;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 56px;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    color: var(--text);
+  }
+
+  /* ── CONTEXT CARD ── */
+  .context-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 720px) { .context-grid { grid-template-columns: 1fr; } }
+
+  .context-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .context-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .context-card.blue::before { background: var(--accent); }
+  .context-card.green::before { background: var(--accent2); }
+  .context-card.amber::before { background: var(--accent3); }
+  .context-card.red::before { background: var(--red); }
+
+  .context-card .card-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  .context-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .context-card p {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    line-height: 1.75;
+  }
+  .context-card ul {
+    list-style: none;
+    margin-top: 10px;
+  }
+  .context-card ul li {
+    font-size: 13px;
+    color: var(--text-dim);
+    padding: 4px 0 4px 16px;
+    position: relative;
+    line-height: 1.6;
+  }
+  .context-card ul li::before {
+    content: '–';
+    position: absolute; left: 0;
+    color: var(--text-muted);
+  }
+
+  /* ── WORK ITEMS ── */
+  .work-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .work-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 16px;
+    align-items: start;
+    transition: border-color .2s;
+  }
+  .work-item:hover { border-color: var(--accent); }
+  .work-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    padding-top: 2px;
+  }
+  .work-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .work-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+  .tag-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    background: var(--surface2);
+    color: var(--accent2);
+    border: 1px solid rgba(0,212,170,.2);
+    letter-spacing: .04em;
+  }
+
+  /* ── KPI STATS ── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 720px) { .kpi-grid { grid-template-columns: repeat(2,1fr); } }
+
+  .kpi-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+  .kpi-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .kpi-val {
+    font-family: var(--display);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .kpi-val.up { color: var(--green); }
+  .kpi-val.neutral { color: var(--text-dim); }
+  .kpi-delta {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ── COMPARISON TABLE ── */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  .compare-table th {
+    background: var(--surface2);
+    padding: 12px 18px;
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .compare-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:hover td { background: var(--surface); }
+  .compare-table td.metric { color: var(--text); font-weight: 500; }
+  .before { color: var(--red) !important; }
+  .after  { color: var(--green) !important; font-weight: 600; }
+
+  /* ── PERIOD TIMELINE ── */
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 680px) { .timeline { grid-template-columns: 1fr; } }
+
+  .period-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+  }
+  .period-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .1em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .p1 .period-badge { background: rgba(100,116,139,.15); color: var(--text-muted); border: 1px solid var(--border); }
+  .p2 .period-badge { background: rgba(59,127,255,.12); color: var(--accent); border: 1px solid rgba(59,127,255,.25); }
+  .p3 .period-badge { background: rgba(0,212,170,.1); color: var(--accent2); border: 1px solid rgba(0,212,170,.25); }
+  .period-date { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; font-family: var(--mono); }
+  .period-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+
+  /* ── META TABLE ── */
+  .effect-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 680px) { .effect-grid { grid-template-columns: 1fr; } }
+
+  .effect-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .effect-card h4 {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent3);
+    margin-bottom: 14px;
+  }
+  .effect-card ul { list-style: none; }
+  .effect-card ul li {
+    font-size: 13px;
+    color: var(--text-dim);
+    padding: 6px 0;
+    padding-left: 18px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.6;
+  }
+  .effect-card ul li:last-child { border-bottom: none; }
+  .effect-card ul li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: var(--accent3);
+    font-size: 11px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    letter-spacing: .08em;
+  }
+
+  /* ── ANIMATE ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero > * { animation: fadeUp .6s ease both; }
+  .hero-meta { animation-delay: .1s; }
+  .hero-title { animation-delay: .2s; }
+  .hero-sub   { animation-delay: .3s; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-meta">
+    SEO · 퍼블리싱 개선 보고서
+    <span>담당자: 이은서 (D2C팀 WD파트 퍼블리셔)</span>
+  </div>
+  <h1 class="hero-title">슬룸 사이트<br><em>최적화 개선 현황</em></h1>
+  <p class="hero-sub">검색 순위 상승이 아닌, 검색엔진이 사이트 구조와 페이지 역할을 올바르게 이해하도록 퍼블리싱 기반을 정비한 작업 기록입니다.</p>
+</div>
+
+<div class="wrapper">
+
+  <!-- 1. 배경 -->
+  <section>
+    <div class="section-label">01 — 기본 배경</div>
+    <h2>왜 이 작업이 필요했나</h2>
+    <div class="context-grid">
+      <div class="context-card blue">
+        <div class="card-num">배경 01</div>
+        <h3>검색 성과 정체 / 하락</h3>
+        <p>브랜드 인지도·제품 경쟁력·광고 유입 트래픽은 충분히 확보된 상태였지만, 자연 검색(SEO) 관점에서는 성과가 정체 또는 하락하는 현상 발생</p>
+        <ul>
+          <li>경쟁사 대비 동일 키워드 노출 순위 열세</li>
+          <li>광고 제외 시 3번째 순서 이후 또는 다음 페이지 노출</li>
+          <li>콘텐츠 부족이 아닌 <strong>구조 인식 오류</strong> 신호</li>
+        </ul>
+      </div>
+      <div class="context-card amber">
+        <div class="card-num">배경 02</div>
+        <h3>아임웹 기반 구조 한계 + 퍼블리싱 누적 이슈</h3>
+        <ul>
+          <li>위젯 중심 구조</li>
+          <li>JS 렌더링 비중이 높은 화면 구성</li>
+          <li>메인/카테고리/상세 페이지 경계 모호</li>
+          <li>H1·시맨틱 구조 불명확</li>
+          <li>메타태그 존재하나 페이지별 역할 신호 약함</li>
+          <li>이미지 alt 태그 누락, 이미지 용량 문제, 중복 코드</li>
+        </ul>
+      </div>
+      <div class="context-card red">
+        <div class="card-num">배경 03</div>
+        <h3>Core Web Vitals 이슈로 SEO 평가 하락</h3>
+        <p>띠배너 타이머, GIF 이미지, 스크립트 기반 콘텐츠 삽입 등으로 레이아웃 이동 반복 발생</p>
+        <ul>
+          <li>레이아웃 불안정 (CLS 악화)</li>
+          <li>사용자 경험 저하 → 이탈률 상승</li>
+          <li>SEO 점수 및 페이지 품질 평가 하락</li>
+        </ul>
+      </div>
+      <div class="context-card green">
+        <div class="card-num">배경 04</div>
+        <h3>메타태그 신호 재정비 필요</h3>
+        <ul>
+          <li>메인/카테고리/상세 간 메타 title·description 역할 구분 불명확</li>
+          <li>특정 키워드 검색 시 의도치 않은 페이지(메인)가 노출</li>
+          <li>카테고리 페이지 검색 결과 미노출 문제</li>
+          <li>중복 title·모호한 description → 감점 요인</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 주요 작업 -->
+  <section>
+    <div class="section-label">02 — 주요 작업</div>
+    <h2>SEO · 퍼블리싱 개선 작업 내용</h2>
+    <div class="work-list">
+      <div class="work-item">
+        <div class="work-num">01</div>
+        <div>
+          <div class="work-title">이미지 접근성 및 SEO 신호 개선</div>
+          <div class="work-desc">상품 목록·상세 페이지 이미지에 상품명 기반 alt 태그 자동 삽입 로직 구현. JS 렌더링 구조에서도 검색엔진이 이미지 의미를 인식할 수 있도록 보완.</div>
+          <div class="tag-row">
+            <span class="tag">alt 태그 자동화</span>
+            <span class="tag">JS 렌더링 대응</span>
+            <span class="tag">이미지 SEO</span>
+          </div>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-num">02</div>
+        <div>
+          <div class="work-title">모바일 UI/UX 기반 성능 최적화</div>
+          <div class="work-desc">모바일 퀵메뉴·플로팅 배너·띠배너(타이머) 영역에서 발생하던 레이아웃 이동 이슈 분석 및 고정 레이아웃 처리. aspect-ratio, min-height 기반 레이아웃 설계로 반응형 환경에서도 CLS 미발생.</div>
+          <div class="tag-row">
+            <span class="tag">CLS 개선</span>
+            <span class="tag">aspect-ratio</span>
+            <span class="tag">min-height</span>
+            <span class="tag">반응형</span>
+          </div>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-num">03</div>
+        <div>
+          <div class="work-title">Core Web Vitals 개선 (CLS / LCP)</div>
+          <div class="work-desc">메인 비주얼(Swiper) 영역의 초기 높이 미확정으로 발생하던 CLS 문제 해결 → CLS 0.47에서 안정 수준으로 개선. LCP 대상 요소를 메인 히어로 이미지/영상으로 명확화. lazyload 적용 범위 재조정으로 초기 렌더 안정성 확보.</div>
+          <div class="tag-row">
+            <span class="tag">CLS 0.47 → 안정</span>
+            <span class="tag">LCP 명확화</span>
+            <span class="tag">lazyload 재조정</span>
+          </div>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-num">04</div>
+        <div>
+          <div class="work-title">검색엔진 이해도 높이는 구조 개선</div>
+          <div class="work-desc">메인 페이지에 시맨틱 태그(header / main / section / footer) 기반 구조 적용. 페이지별 H1 구조 정리(sr-only 포함)로 검색엔진 주제 인식 강화. 메타 title/description 중복 구조 점검 및 페이지 단위 정상 동작 보장.</div>
+          <div class="tag-row">
+            <span class="tag">시맨틱 HTML</span>
+            <span class="tag">H1 구조화</span>
+            <span class="tag">메타태그 정비</span>
+            <span class="tag">sr-only</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. GSC 성과 -->
+  <section>
+    <div class="section-label">03 — GSC 성과 측정</div>
+    <h2>구글 서치 콘솔 기준 성과 (메가 키워드 "마사지기")</h2>
+
+    <div class="timeline">
+      <div class="period-card p1">
+        <span class="period-badge">① SEO 작업 전</span>
+        <div class="period-date">~ 2025.03.26</div>
+        <div class="period-title">1차 리뉴얼 이전</div>
+        <p style="font-size:13px;color:var(--text-muted);">기본 SEO 신호 미정비 상태. 구조적 이슈 누적.</p>
+      </div>
+      <div class="period-card p2">
+        <span class="period-badge">② SEO 작업 초반</span>
+        <div class="period-date">2025.09.28 ~ 2025.11.27</div>
+        <div class="period-title">기본 코드 최적화</div>
+        <p style="font-size:13px;color:var(--text-muted);">리뉴얼 후 기본 최적화 적용 시작. 초기 효과 발생.</p>
+      </div>
+      <div class="period-card p3">
+        <span class="period-badge">③ SEO 세밀 작업 후</span>
+        <div class="period-date">2025.11.28 ~ 2026.03.12</div>
+        <div class="period-title">심화 개선 완료</div>
+        <p style="font-size:13px;color:var(--text-muted);">메타태그·구조·성능 전방위 개선 완료. 성과 안정화.</p>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">총 클릭수</div>
+        <div class="kpi-val up">+399%</div>
+        <div class="kpi-delta">365 → 1,820 (약 5배)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">총 노출수</div>
+        <div class="kpi-val up">+424%</div>
+        <div class="kpi-delta">10,300 → 54,000 (약 5.2배)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">평균 CTR</div>
+        <div class="kpi-val neutral">3.4%</div>
+        <div class="kpi-delta">3.5% → 3.4% (유지)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">평균 순위</div>
+        <div class="kpi-val up">+0.6</div>
+        <div class="kpi-delta">5.0 → 4.4 (상승)</div>
+      </div>
+    </div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>지표</th>
+          <th>작업 이전</th>
+          <th>작업 이후</th>
+          <th>변화량</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="metric">총 클릭수</td>
+          <td class="before">365</td>
+          <td class="after">1,820</td>
+          <td class="after">+399% ↑</td>
+        </tr>
+        <tr>
+          <td class="metric">총 노출수</td>
+          <td class="before">10,300</td>
+          <td class="after">54,000</td>
+          <td class="after">+424% ↑</td>
+        </tr>
+        <tr>
+          <td class="metric">평균 CTR</td>
+          <td>3.5%</td>
+          <td>3.4%</td>
+          <td style="color:var(--text-muted);">-0.1% (유지 수준)</td>
+        </tr>
+        <tr>
+          <td class="metric">평균 순위</td>
+          <td class="before">5.0</td>
+          <td class="after">4.4</td>
+          <td class="after">0.6 상승 ↑</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:14px;font-size:12.5px;color:var(--text-muted);line-height:1.7;">
+      ※ 노출이 늘어나면 CTR이 하락하는 것이 일반적이나, CTR을 유지하면서 노출·클릭 5배 이상 증가는 유의미한 성과입니다.<br>
+      ※ 슬룸은 매달 이벤트 프로모션 진행 시 메인 페이지가 변경(롤링배너, 상품 진열 수정)되어 구글이 페이지 주제를 재판단 → 순위 변동이 발생할 수 있습니다.
+    </p>
+  </section>
+
+  <!-- 4. 메타태그 개선 목적 -->
+  <section>
+    <div class="section-label">04 — 메타태그 개선</div>
+    <h2>메타태그 수정의 핵심 목적과 기대 효과</h2>
+    <div class="effect-grid">
+      <div class="effect-card">
+        <h4>핵심 목적</h4>
+        <ul>
+          <li>각 페이지가 역할을 분담하도록 신호 분리<br><span style="font-size:12px;opacity:.7;">메인(브랜드 허브) / 카테고리(탐색) / 상세(구매)</span></li>
+          <li>동일 순위에서 사용자가 클릭할 이유 명확화<br><span style="font-size:12px;opacity:.7;">광고 문구 ❌ → 페이지 정보 요약형 문장 ⭕</span></li>
+          <li>중복 title 제거 / description 누락 방지</li>
+          <li>페이지별 고유 메타 정보 보장</li>
+        </ul>
+      </div>
+      <div class="effect-card">
+        <h4>단기 기대 효과</h4>
+        <ul>
+          <li>크롤링 시 페이지 주제 인식 명확화</li>
+          <li>SEO 점수 툴 기준 메타 경고 항목 감소</li>
+          <li>검색 결과에서 잘못된 페이지 노출 빈도 감소</li>
+        </ul>
+      </div>
+      <div class="effect-card">
+        <h4>중장기 기대 효과</h4>
+        <ul>
+          <li>카테고리/상세 페이지 검색 쿼리 매칭 정확도 향상</li>
+          <li>CTR 개선 → 사용자 반응 데이터 축적</li>
+          <li>Core Web Vitals 개선과 결합 시 자연 검색 유입 회복 기반 마련</li>
+        </ul>
+      </div>
+      <div class="effect-card">
+        <h4>개선 작업 요약</h4>
+        <ul>
+          <li>메타 타이틀 페이지별 수정</li>
+          <li>메타 설명(description) 개선</li>
+          <li>콘텐츠 구조 개선 (시맨틱 태그)</li>
+          <li>내부 링크 증가</li>
+          <li>이미지 alt 태그 삽입</li>
+          <li>페이지 로딩 성능 개선</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /wrapper -->
+
+<footer>
+  슬룸 (Sleeplab) · SEO &amp; 퍼블리싱 개선 보고서 · 이은서_D2C팀 WD파트 퍼블리셔
+</footer>
+
+</body>
+</html>

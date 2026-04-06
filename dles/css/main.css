@@ -2,22 +2,18 @@
   --main-color: #b53720;
   --sub-color: #fcfff5;
 }
-
 .btn-box > .link-btn.pc-view,
 .pc-img {
   display: flex;
 }
-
 .mo-img,
 .btn-box > .link-btn.mo-view,
 .btn-box > .site-btn.mo-view {
   display: none;
 }
-
 .dn {
   display: none !important;
 }
-
 #main {
   box-sizing: border-box;
   overflow: hidden;
@@ -35,7 +31,6 @@
   padding: 0 20px;
   box-sizing: border-box;
 }
-
 /*========================================================================
 메인 비주얼
 ========================================================================*/
@@ -68,7 +63,6 @@
   height: 100%;
   border-radius: 0;
 }
-
 /* 비쥬얼 텍스트 */
 .main-visual > a > div.main-visual-title ul {
   position: absolute;
@@ -103,7 +97,6 @@
   text-align: right;
   letter-spacing: -0.2px;
 }
-
 .main-visual .main-visual-title .visual-txt-ani {
   width: 0;
   height: 1px;
@@ -145,7 +138,6 @@
   opacity: 1;
   animation: Rotate 1.8s ease-in-out infinite;
 }
-
 /* 스크롤 다운 */
 .main-visual .scroll-down {
   position: absolute;
@@ -165,7 +157,6 @@
 .main-visual .scroll-down > span > img {
   width: 100%;
 }
-
 /*========================================================================
 메인 영역
 ========================================================================*/
@@ -191,7 +182,6 @@
   padding: 70px 0 100px;
   background: var(--main-color);
 }
-
 /* 타이틀 공통 */
 #main .main-title {
   position: relative;
@@ -213,7 +203,6 @@
   width: 100%;
   vertical-align: top;
 }
-
 /* 더보기 버튼 */
 .more-btn {
   display: block;
@@ -222,7 +211,6 @@
   font-size: 0;
   background: url("../img/more-btn.png") no-repeat 100%;
 }
-
 /* 버튼 공통 */
 .btn-box {
   padding: 60px 0 0;
@@ -255,7 +243,6 @@
   font-size: 20px;
   text-align: center;
 }
-
 /* 빨간배경 */
 .btn-box > .site-btn,
 .btn-box > .link-btn:hover {
@@ -277,7 +264,6 @@
 .btn-box > .site-btn:hover {
   background: var(--sub-color);
 }
-
 /* About Me */
 .about-bg {
   position: absolute;
@@ -381,7 +367,6 @@
   vertical-align: top;
   transition: 0.6s ease-in-out;
 }
-
 /* skill */
 .skill-wrap .skill-box {
   margin: 0 0 50px;
@@ -419,7 +404,6 @@
 .skill-wrap .tools li:last-child img {
   border: 1px solid #121212;
 }
-
 .introduce-wrap .mid-line {
   position: relative;
 }
@@ -464,7 +448,6 @@
   padding: 0 0 3px;
   border-bottom: 1px solid #121212;
 }
-
 /* 띠 배너 */
 .flow-line-box {
   white-space: nowrap;
@@ -484,7 +467,6 @@
   padding: 0 40px;
   background: url("../img/star-icon1.png") no-repeat center;
 }
-
 /* 메인 프로젝트 */
 .project-wrap-top .main-title h2 {
   right: 0;
@@ -583,7 +565,6 @@
 .project-wrap-bottom .project-box .project-desc-box > ul > li {
   list-style-type: disc;
 }
-
 /* etc 프로젝트 */
 .etc-project-wrap {
   max-width: 2000px;
@@ -736,7 +717,6 @@
 .thumb-wrap .thumb-detail::-webkit-scrollbar-button {
   display: none;
 }
-
 /* 스크롤 바 - 감춤 */
 .etc-project-wrap .swiper-scrollbar {
   position: static;
@@ -766,7 +746,6 @@
   right: 0;
   background: url("../img/etc-next-btn.png") no-repeat 100%;
 }*/
-
 /* contact */
 .contact-wrap {
   position: relative;
@@ -834,25 +813,21 @@
 .contact-info ul li strong {
   padding-right: 15px;
 }
-
 @media all and (max-width: 1600px) {
   /* 메인 비주얼 */
   .main-visual {
     height: 100%;
   }
-
   /* 메인 프로젝트 */
   .project-wrap-bottom .project-box .project-desc-box h3 {
     font-size: 90px;
   }
 }
-
 @media all and (max-width: 1400px) {
   /* 메인 비주얼 */
   .main-visual > a > div.main-visual-title ul > .sub-tit {
     font-size: 35px;
   }
-
   /* 타이틀 공통 */
   #main .about-wrap > * {
     display: block;
@@ -880,7 +855,6 @@
     width: 80%;
     margin: 40px auto 0;
   }
-
   /* about */
   .about-flex {
     width: 100%;
@@ -897,7 +871,6 @@
     left: auto;
     transform: rotate(0deg);
   }
-
   /* 메인 프로젝트 */
   .project-wrap-bottom .project-box .project-desc-box h3 {
     font-size: 80px;
@@ -913,13 +886,11 @@
     height: 60%;
   }
 }
-
 @media all and (max-width: 1240px) {
   /* 메인 프로젝트 */
   .project-wrap-bottom .project-box .mo-thumb {
     height: 50%;
   }
-
   /* contact */
   .contact-box {
     flex-direction: column-reverse;
@@ -947,13 +918,11 @@
     font-size: 25px;
   }
 }
-
 @media all and (max-width: 1024px) {
   /* 메인 비주얼 */
   .main-visual > a > div.main-visual-title ul > .sub-tit {
     font-size: 25px;
   }
-
   /* about */
   #main .about-wrap .main-title h2 {
     margin: 0;
@@ -970,7 +939,6 @@
   .about-center {
     margin: 65px 0 20px 0;
   }
-
   /* 메인 프로젝트 */
   .main-project-wrap .project-wrap-bottom {
     padding-top: 50px;
@@ -988,7 +956,6 @@
   .project-wrap-bottom .project-box .mo-thumb {
     height: 58%;
   }
-
   /* etc 프로젝트 */
   .etc-project-wrap .etc-box .prdList > li .etc-slide .description > ul {
     padding-top: 15px;
@@ -1000,13 +967,11 @@
     list-style-type: disc;
   }
 }
-
 @media all and (max-width: 1024px) {
   /* 메인 프로젝트 */
   .main-visual > a > div.main-visual-title ul > .sub-tit {
     font-size: 25px;
   }
-
   /* 메인 프로젝트 */
   .main-project-wrap .project-wrap-bottom {
     padding-top: 50px;
@@ -1027,7 +992,6 @@
   .project-wrap-bottom .project-box .mo-thumb {
     height: 58%;
   }
-
   /* etc 프로젝트 */
   .etc-project-wrap {
     max-width: 100%;
@@ -1112,7 +1076,6 @@
     display: none;
   }
 }
-
 @media all and (max-width: 768px) {
   /* pc & mo 보기 설정 */
   .pc-img,
@@ -1125,7 +1088,6 @@
   .btn-box > .link-btn.mo-view {
     display: flex;
   }
-
   /* 메인 비쥬얼 */
   .main-visual,
   .main-visual .main-image img {
@@ -1147,11 +1109,9 @@
   .main-visual .main-visual-title .visual-txt-motion > img.rotate {
     width: 100%;
   }
-
   .main-visual .scroll-down > span {
     width: 70%;
   }
-
   /* 타이틀 공통 */
   #main .about-wrap .main-title {
     width: 70%;
@@ -1165,7 +1125,6 @@
   #main .main-title p {
     width: 64%;
   }
-
   /* 버튼공통 */
   .btn-box {
     justify-content: flex-start;
@@ -1181,7 +1140,6 @@
   .btn-box > .link-btn a {
     font-size: 14px;
   }
-
   /* box 간격 */
   .main-box {
     padding: 65px 0 75px;
@@ -1195,7 +1153,6 @@
   .main-box4 {
     padding: 20px 0;
   }
-
   /* about */
   #main .about-wrap .main-title p {
     margin: 40px 0 0;
@@ -1235,7 +1192,6 @@
     padding-top: 35px;
     font-size: 15px;
   }
-
   /* flow line 배너 */
   .flow-inner {
     animation: flowTxt 7s linear Infinite;
@@ -1246,7 +1202,6 @@
   .flow-line-box em .star-icon {
     background-size: 30%;
   }
-
   /* 메인 프로젝트 */
   .project-tab {
     padding: 0;
@@ -1286,7 +1241,6 @@
     padding: 30px 0 0 20px;
     font-size: 14px;
   }
-
   /* etc 프로젝트 */
   #etc .main-inner {
     padding: 0;
@@ -1311,13 +1265,11 @@
   .etc-project-wrap .etc-box .prdList > li .etc-slide .description p {
     font-size: 14px;
   }
-
   /* contact */
   .contact-wrap .contact-bg {
     animation: flowTxt 8s linear Infinite;
   }
 }
-
 @media all and (max-width: 400px) {
   /* about */
   #main .about-wrap .main-title h2 {
@@ -1330,7 +1282,6 @@
   .about-center {
     margin: 45px 0 20px 0;
   }
-
   /* 메인 프로젝트 */
   .project-tab > ul > li {
     font-size: 16px;
