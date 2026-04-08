@@ -394,6 +394,7 @@
   position: relative;
 }
 .skill-wrap .skill-box > ul > li {
+  max-width: 90px;
   margin: 0 20px 40px 20px;
 }
 .skill-wrap .skill-box > ul > li > p {
@@ -411,8 +412,9 @@
 }
 .skill-wrap .tools li img {
   border-radius: 5px;
-  width: 90px;
+  width: 100%;
   vertical-align: top;
+  background: #fff;
 }
 .introduce-wrap .mid-line {
   position: relative;
@@ -1191,8 +1193,6 @@
   }
   .skill-wrap .skill-box > ul > li canvas,
   .skill-wrap .tools li img {
-    width: 80px;
-    height: 80px;
   }
   .introduce-box {
     padding-top: 70px;
