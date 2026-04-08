@@ -1189,11 +1189,10 @@
     font-size: 12px;
   }
   .skill-wrap .skill-box > ul > li {
+    max-width: 50px;
     margin: 0 10px 20px 10px;
   }
-  .skill-wrap .skill-box > ul > li canvas,
-  .skill-wrap .tools li img {
-  }
+
   .introduce-box {
     padding-top: 70px;
   }
