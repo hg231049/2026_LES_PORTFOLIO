@@ -188,21 +188,29 @@
   display: flex;
   justify-content: center;
   padding: 0 0 65px;
+  color: #121212;
+  text-align: center;
+  font-family: "Libre Baskerville", serif;
   line-height: 1;
 }
-#main .main-title h2 {
-  position: absolute;
-  top: 0;
-  max-width: 214px;
+#main .main-title.fc-w {
+  color: #fff;
 }
 #main .main-title p {
-  max-width: 474px;
+  position: absolute;
+  top: 0;
   margin: 0 40px;
+  font-size: 120px;
 }
-#main .main-title img {
-  width: 100%;
-  vertical-align: top;
+#main .main-title h2 {
+  font-size: 80px;
+  line-height: 1.3;
+  letter-spacing: -0.02rem;
 }
+#main .main-title h2 span {
+  font-size: 40px;
+}
+
 /* 더보기 버튼 */
 .more-btn {
   display: block;
@@ -298,14 +306,16 @@
 }
 #main .about-wrap .main-title {
   display: block;
-  width: 33.33%;
+  width: 35.33%;
   padding: 0;
-}
-#main .about-wrap .main-title p {
-  max-width: 438px;
-  margin: 80px 0 0;
+  text-align: left;
 }
 #main .about-wrap .main-title h2 {
+  margin: 80px 0 0;
+  font-size: 120px;
+  line-height: 1.3;
+}
+#main .about-wrap .main-title p {
   position: static;
   max-width: 130px;
 }
@@ -368,6 +378,9 @@
   transition: 0.6s ease-in-out;
 }
 /* skill */
+#main .skill-wrap .main-title p {
+  font-size: 80px;
+}
 .skill-wrap .skill-box {
   margin: 0 0 50px;
   color: #121212;
@@ -397,12 +410,9 @@
   transform: translate(-50%, -50%);
 }
 .skill-wrap .tools li img {
-  border-radius: 50%;
+  border-radius: 5px;
   width: 90px;
   vertical-align: top;
-}
-.skill-wrap .tools li:last-child img {
-  border: 1px solid #121212;
 }
 .introduce-wrap .mid-line {
   position: relative;
@@ -1116,14 +1126,14 @@
   #main .about-wrap .main-title {
     width: 70%;
   }
-  #main .main-title h2 {
-    width: 27%;
-  }
   #main .about-wrap .main-title h2 {
     width: 22%;
   }
-  #main .main-title p {
-    width: 64%;
+  #main .main-title h2 {
+    font-size: 9.3023vw;
+  }
+  #main .main-title h2 span {
+    font-size: 5.3023vw;
   }
   /* 버튼공통 */
   .btn-box {
@@ -1154,8 +1164,8 @@
     padding: 20px 0;
   }
   /* about */
-  #main .about-wrap .main-title p {
-    margin: 40px 0 0;
+  #main .about-wrap .main-title h2 {
+    font-size: 13.9535vw;
   }
   .about-center {
     margin: 45px 0 20px 0;
