@@ -95,6 +95,8 @@ table .pc-view {
     border-bottom-right-radius: 50px;
     background: var(--sub-color);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(15px);
   }
   #header.fixed:not(.change) .header-wrap::before {
     top: 0;
