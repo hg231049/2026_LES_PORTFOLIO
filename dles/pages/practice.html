@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+  tailwind.config = {
+    important: true,
+    corePlugins: { preflight: false },
+    theme: {
+      extend: {
+        colors: {
+          'brand': '#002353',
+          'sub-brand' : '#F5F7FB',
+        },
+        // [여기가 핵심!] 애니메이션의 움직임을 정의합니다.
+        keyframes: {
+          shimmer: {
+            '0%': { transform: 'translateX(-100%)' },
+            '100%': { transform: 'translateX(100%)' }
+          }
+        },
+        // 위에서 만든 움직임을 'animate-shimmer'라는 이름으로 등록합니다.
+        animation: {
+          shimmer: 'shimmer 1.5s infinite'
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body>
+    <div id="practiceCard" class="absolute t-[50%] max-w-[1200px] mx-auto p-5">
+
+        <h2>SEO관리 및 성능 최적화</h2>
+        <p>2025.11.10 ~ 2026.03.12</p>
+
+        <div id="dashboard" class="
+                grid grid-cols-1 md:grid-cols-2  gap-5
+                [&_.card]:p-6 [&_.card]:rounded-xl [&_.card]:boder [&_.card]:border-gray-100 [&_.card]:bg-white [&_.card]:cursor-pointer [&_.card]:transition-all 
+                [&_.tit-wrap]:flex [&_.tit-wrap]:justify-between [&_.tit-wrap]:items-end [&_.tit-wrap]:mb-4
+                [&_.card-tit>p]:text-sm [&_.card-tit>p]:text-gray-500 [&_.card-tit>p]:mb-1
+                [&_.card-tit>h3]:text-2xl [&_.card-tit>h3]:text-brand [&_.card-tit>h3]:font-bold 
+                [&_.progress-bar]:w-full [&_.progress-bar]:h-2 [&_.progress-bar]:bg-gray-100 [&_.progress-bar]:rounded-full [&_.progress-bar]:overflow-hidden
+                [&_.progress-full]:h-full [&_.progress-full]:bg-brand [&_.progress-full]:transition-all [&_.progress-full]:duration-1000  [&_.progress-full]:ease-in-out
+                
+        ">
+            <div data-active="false" class="card group relative overflow-hidden p-6 rounded-xl border border-gray-100 bg-white shadow-sm cursor-pointer transition-all data-[active=true]:shadow-lg data-[active=true]:-translate-y-3">
+                <div class="card-content group-[.is-loading]:opacity-0 transition-opacity">
+                    <div class="tit-wrap flex justify-between items-start mb-4">
+                        <div class="card-tit">
+                            <p class="text-xs text-gray-500 mb-1">총 클릭수</p>
+                            <div class="flex items-end gap-2 mb-2">
+                                <h3 class="text-3xl font-bold text-brand leading-none mb-0">1,820</h3>
+                                <span class="text-[10px] text-gray-400">이전 365</span>
+                            </div>
+                        </div>
+                        <div class="icon w-10 h-10 bg-sub-brand rounded-lg flex items-center justify-center text-lg">🖱️</div>
+                    </div>
+
+                    <div class="mt-6">
+                        <div class="flex justify-between items-end mb-1.5">
+                            <span class="text-[11px] font-bold text-brand">+1455 click</span>
+                            <div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sub-brand text-brand text-[11px] font-bold">
+                                ▲ 399%
+                            </div>
+                        </div>
+                        <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-brand w-full transition-all duration-1000 ease-out"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skeleton-layer hidden absolute inset-0 bg-white p-6  group-[.is-loading]:flex flex-col justify-between z-10">
+                    <div class="flex justify-between items-end mb-4 animate-pulse">
+                        <div>
+                            <p class="h-5 w-12 bg-gray-200 rounded mb-2"></p>
+                            <h3 class="h-8 w-20 my-6 bg-gray-200 rounded"></h3>
+                        </div>
+                        <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+                    </div>
+                    <div class="w-full h-2 bg-gray-100 rounded-full animate-pulse">
+                        <div class="h-full bg-gray-200 w-[70%]"></div>
+                    </div>
+                </div>
+            </div>
+            <div data-active="false" class="card group relative overflow-hidden p-6 rounded-xl border border-gray-100 bg-white shadow-sm cursor-pointer transition-all data-[active=true]:shadow-lg data-[active=true]:-translate-y-3">
+                <div class="card-content group-[.is-loading]:opacity-0 transition-opacity">
+                    <div class="tit-wrap flex justify-between items-start mb-4">
+                        <div class="card-tit">
+                            <p class="text-xs text-gray-500 mb-1">총 노출수</p>
+                            <div class="flex items-end gap-2 mb-2">
+                                <h3 class="text-3xl font-bold text-brand leading-none mb-0">54,000</h3>
+                                <span class="text-[10px] text-gray-400">이전 10,300</span>
+                            </div>
+                        </div>
+                        <div class="icon w-10 h-10 bg-sub-brand rounded-lg flex items-center justify-center text-lg">🔍</div>
+                    </div>
+
+                    <div class="mt-6">
+                        <div class="flex justify-between items-end mb-1.5">
+                            <span class="text-[11px] font-bold text-brand">+43,700 UP</span>
+                            <div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sub-brand text-brand text-[11px] font-bold">
+                                ▲ 424%
+                            </div>
+                        </div>
+                        <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-brand w-full transition-all duration-1000 ease-out"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skeleton-layer hidden absolute inset-0 bg-white p-6  group-[.is-loading]:flex flex-col justify-between z-10">
+                    <div class="flex justify-between items-end mb-4 animate-pulse">
+                        <div>
+                            <p class="h-5 w-12 bg-gray-200 rounded mb-2"></p>
+                            <h3 class="h-8 w-20 my-6 bg-gray-200 rounded"></h3>
+                        </div>
+                        <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+                    </div>
+                    <div class="w-full h-2 bg-gray-100 rounded-full animate-pulse">
+                        <div class="h-full bg-gray-200 w-[70%]"></div>
+                    </div>
+                </div>
+            </div>
+            <div data-active="false" class="card group relative overflow-hidden p-6 rounded-xl border border-gray-100 bg-white shadow-sm cursor-pointer transition-all data-[active=true]:shadow-lg data-[active=true]:-translate-y-3">
+                <div class="card-content group-[.is-loading]:opacity-0 transition-opacity">
+                    <div class="tit-wrap flex justify-between items-start mb-4">
+                        <div class="card-tit">
+                            <p class="text-xs text-gray-500 mb-1">평균 CTR</p>
+                            <div class="flex items-end gap-2 mb-2">
+                                <h3 class="text-3xl font-bold text-brand leading-none mb-0">3.4%</h3>
+                                <span class="text-[10px] text-gray-400">이전 3.5%</span>
+                            </div>
+                        </div>
+                        <div class="icon w-10 h-10 bg-sub-brand rounded-lg flex items-center justify-center text-lg">📈</div>
+                    </div>
+
+                    <div class="mt-6">
+                        <div class="flex justify-between items-end mb-1.5">
+                            <span class="text-[11px] font-bold text-brand">거의 동일</span>
+                            <div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sub-brand text-brand text-[11px] font-bold">
+                                ▼ (-0.1%)
+                            </div>
+                        </div>
+                        <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-brand w-full transition-all duration-1000 ease-out"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skeleton-layer hidden absolute inset-0 bg-white p-6  group-[.is-loading]:flex flex-col justify-between z-10">
+                    <div class="flex justify-between items-end mb-4 animate-pulse">
+                        <div>
+                            <p class="h-5 w-12 bg-gray-200 rounded mb-2"></p>
+                            <h3 class="h-8 w-20 my-6 bg-gray-200 rounded"></h3>
+                        </div>
+                        <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+                    </div>
+                    <div class="w-full h-2 bg-gray-100 rounded-full animate-pulse">
+                        <div class="h-full bg-gray-200 w-[70%]"></div>
+                    </div>
+                </div>
+            </div>
+            <div data-active="false" class="card group relative overflow-hidden p-6 rounded-xl border border-gray-100 bg-white shadow-sm cursor-pointer transition-all data-[active=true]:shadow-lg data-[active=true]:-translate-y-3">
+                <div class="card-content group-[.is-loading]:opacity-0 transition-opacity">
+                    <div class="tit-wrap flex justify-between items-start mb-4">
+                        <div class="card-tit">
+                            <p class="text-xs text-gray-500 mb-1">평균 순위</p>
+                            <div class="flex items-end gap-2 mb-2">
+                                <h3 class="text-3xl font-bold text-brand leading-none mb-0">4.4</h3>
+                                <span class="text-[10px] text-gray-400">이전 5.0</span>
+                            </div>
+                        </div>
+                        <div class="icon w-10 h-10 bg-sub-brand rounded-lg flex items-center justify-center text-lg">🏅</div>
+                    </div>
+
+                    <div class="mt-6">
+                        <div class="flex justify-between items-end mb-1.5">
+                            <span class="text-[11px] font-bold text-brand">0.6 상승</span>
+                            <div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sub-brand text-brand text-[11px] font-bold">
+                                ▲ 0.6
+                            </div>
+                        </div>
+                        <div class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-brand w-full transition-all duration-1000 ease-out"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skeleton-layer hidden absolute inset-0 bg-white p-6  group-[.is-loading]:flex flex-col justify-between z-10">
+                    <div class="flex justify-between items-end mb-4 animate-pulse">
+                        <div>
+                            <p class="h-5 w-12 bg-gray-200 rounded mb-2"></p>
+                            <h3 class="h-8 w-20 my-6 bg-gray-200 rounded"></h3>
+                        </div>
+                        <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+                    </div>
+                    <div class="w-full h-2 bg-gray-100 rounded-full animate-pulse">
+                        <div class="h-full bg-gray-200 w-[70%]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       const dashCards = document.querySelectorAll('.card');
+        
+        dashCards.forEach(card => {
+            card.classList.add('is-loading');
+            setTimeout(() => {
+                card.classList.remove('is-loading');
+            }, 1200);
+            card.addEventListener('click', () => {
+                setTimeout(() => {
+                    const isActive = card.getAttribute('data-active') === 'true';
+                    card.setAttribute('data-active', isActive ? 'false' : 'true');
+                }, 500);
+            });
+        });
+
+    </script>
+</body>
+</html>
