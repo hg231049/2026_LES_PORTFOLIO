@@ -13,7 +13,7 @@
         theme: {
           extend: {
             colors: {
-              brand: "#002353",
+              brand: "#337320",
               "sub-brand": "#F5F7FB",
             },
             // [여기가 핵심!] 애니메이션의 움직임을 정의합니다.
@@ -46,9 +46,6 @@
     </h1>
     <section id="dashboard" class="max-w-[1280px] mx-auto">
       <div class="dashboard-thumb text-center [&_img]:w-[100%]">
-        <div class="seo">
-          <img src="../img/seo-thumb.png" alt="seo개선 썸네일" />
-        </div>
         <div class="performance grid grid-cols-1 gap-5 md:grid-cols-2 mx-5">
           <div class="before">
             <span
@@ -83,187 +80,200 @@
       </div>
     </section>
     <!-------- 스크롤 가로 모션 -------->
-    <section id="sticky-wrapper" class="relative h-[300vh]">
-      <div class="sticky top-0 h-screen flex items-center overflow-hidden">
-        <div
-          id="horizontal-track"
-          class="flex gap-10 px-[10vw] transition-transform duration-75 ease-out"
-        >
+    <section>
+      <div class="seo text-center">
+        <img src="../img/seo-thumb.png" alt="seo개선 썸네일" />
+      </div>
+      <div id="sticky-wrapper" class="relative h-[300vh]">
+        <div class="sticky top-0 h-screen flex items-center overflow-hidden">
           <div
-            data-active="false"
-            class="card group observe reveal flex-shrink-0 w-[80vw] md:w-[40vw] bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl translate-y-20 relative overflow-hidden p-6 shadow-lg cursor-pointer transition-all data-[active=true]:shadow-lg data-[active=true]:-translate-y-3"
+            id="horizontal-track"
+            class="flex gap-10 px-[10vw] transition-transform duration-75 ease-out"
           >
             <div
-              class="card-content group-[.is-loading]:opacity-0 transition-opacity"
+              data-active="false"
+              class="card group observe reveal flex-shrink-0 w-[80vw] md:w-[40vw] bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl translate-y-20 relative overflow-hidden p-6 shadow-lg cursor-pointer transition-all data-[active=true]:shadow-lg data-[active=true]:-translate-y-3"
             >
-              <div class="tit-wrap flex justify-between items-start mb-4">
-                <div class="card-tit">
-                  <p class="text-xs text-gray-500 mb-1">총 클릭수</p>
-                  <div class="flex items-end gap-2 mb-2">
-                    <h3 class="text-3xl font-bold text-brand leading-none mb-0">
-                      1,820
-                    </h3>
-                    <span class="text-[10px] text-gray-400">이전 365</span>
+              <div
+                class="card-content group-[.is-loading]:opacity-0 transition-opacity"
+              >
+                <div class="tit-wrap flex justify-between items-start mb-4">
+                  <div class="card-tit">
+                    <p class="text-xs text-gray-500 mb-1">총 클릭수</p>
+                    <div class="flex items-end gap-2 mb-2">
+                      <h3
+                        class="text-3xl font-bold text-brand leading-none mb-0"
+                      >
+                        1,820
+                      </h3>
+                      <span class="text-[10px] text-gray-400">이전 365</span>
+                    </div>
+                  </div>
+                  <div
+                    class="icon w-10 h-10 bg-sub-brand rounded-lg flex items-center justify-center text-lg"
+                  >
+                    🖱️
                   </div>
                 </div>
-                <div
-                  class="icon w-10 h-10 bg-sub-brand rounded-lg flex items-center justify-center text-lg"
-                >
-                  🖱️
+
+                <div class="mt-6">
+                  <div class="flex justify-between items-end mb-1.5">
+                    <span class="text-[11px] font-bold text-brand"
+                      >+1455 click</span
+                    >
+                    <div
+                      class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sub-brand text-brand text-[11px] font-bold"
+                    >
+                      ▲ 399%
+                    </div>
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-brand w-full transition-all duration-1000 ease-out"
+                    ></div>
+                  </div>
                 </div>
               </div>
 
-              <div class="mt-6">
-                <div class="flex justify-between items-end mb-1.5">
-                  <span class="text-[11px] font-bold text-brand"
-                    >+1455 click</span
-                  >
-                  <div
-                    class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sub-brand text-brand text-[11px] font-bold"
-                  >
-                    ▲ 399%
+              <div
+                class="skeleton-layer hidden absolute inset-0 bg-white p-6 group-[.is-loading]:flex flex-col justify-between z-10"
+              >
+                <div class="flex justify-between items-end mb-4 animate-pulse">
+                  <div>
+                    <p class="h-5 w-12 bg-gray-200 rounded mb-2"></p>
+                    <h3 class="h-8 w-20 my-6 bg-gray-200 rounded"></h3>
                   </div>
+                  <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
                 </div>
-                <div
-                  class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden"
-                >
-                  <div
-                    class="h-full bg-brand w-full transition-all duration-1000 ease-out"
-                  ></div>
+                <div class="w-full h-2 bg-gray-100 rounded-full animate-pulse">
+                  <div class="h-full bg-gray-200 w-[70%]"></div>
                 </div>
               </div>
             </div>
-
             <div
-              class="skeleton-layer hidden absolute inset-0 bg-white p-6 group-[.is-loading]:flex flex-col justify-between z-10"
+              data-active="false"
+              class="card group observe reveal flex-shrink-0 w-[80vw] md:w-[40vw] bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl translate-y-20 relative overflow-hidden p-6 shadow-lg cursor-pointer transition-all data-[active=true]:shadow-lg data-[active=true]:-translate-y-3"
             >
-              <div class="flex justify-between items-end mb-4 animate-pulse">
-                <div>
-                  <p class="h-5 w-12 bg-gray-200 rounded mb-2"></p>
-                  <h3 class="h-8 w-20 my-6 bg-gray-200 rounded"></h3>
-                </div>
-                <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
-              </div>
-              <div class="w-full h-2 bg-gray-100 rounded-full animate-pulse">
-                <div class="h-full bg-gray-200 w-[70%]"></div>
-              </div>
-            </div>
-          </div>
-          <div
-            data-active="false"
-            class="card group observe reveal flex-shrink-0 w-[80vw] md:w-[40vw] bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl translate-y-20 relative overflow-hidden p-6 shadow-lg cursor-pointer transition-all data-[active=true]:shadow-lg data-[active=true]:-translate-y-3"
-          >
-            <div
-              class="card-content group-[.is-loading]:opacity-0 transition-opacity"
-            >
-              <div class="tit-wrap flex justify-between items-start mb-4">
-                <div class="card-tit">
-                  <p class="text-xs text-gray-500 mb-1">총 노출수</p>
-                  <div class="flex items-end gap-2 mb-2">
-                    <h3 class="text-3xl font-bold text-brand leading-none mb-0">
-                      54,000
-                    </h3>
-                    <span class="text-[10px] text-gray-400">이전 10,300</span>
+              <div
+                class="card-content group-[.is-loading]:opacity-0 transition-opacity"
+              >
+                <div class="tit-wrap flex justify-between items-start mb-4">
+                  <div class="card-tit">
+                    <p class="text-xs text-gray-500 mb-1">총 노출수</p>
+                    <div class="flex items-end gap-2 mb-2">
+                      <h3
+                        class="text-3xl font-bold text-brand leading-none mb-0"
+                      >
+                        54,000
+                      </h3>
+                      <span class="text-[10px] text-gray-400">이전 10,300</span>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="icon w-10 h-10 bg-sub-brand rounded-lg flex items-center justify-center text-lg"
-                >
-                  🔍
-                </div>
-              </div>
-
-              <div class="mt-6">
-                <div class="flex justify-between items-end mb-1.5">
-                  <span class="text-[11px] font-bold text-brand"
-                    >+43,700 UP</span
+                  <div
+                    class="icon w-10 h-10 bg-sub-brand rounded-lg flex items-center justify-center text-lg"
                   >
+                    🔍
+                  </div>
+                </div>
+
+                <div class="mt-6">
+                  <div class="flex justify-between items-end mb-1.5">
+                    <span class="text-[11px] font-bold text-brand"
+                      >+43,700 UP</span
+                    >
+                    <div
+                      class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sub-brand text-brand text-[11px] font-bold"
+                    >
+                      ▲ 424%
+                    </div>
+                  </div>
                   <div
-                    class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sub-brand text-brand text-[11px] font-bold"
+                    class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden"
                   >
-                    ▲ 424%
+                    <div
+                      class="h-full bg-brand w-full transition-all duration-1000 ease-out"
+                    ></div>
                   </div>
-                </div>
-                <div
-                  class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden"
-                >
-                  <div
-                    class="h-full bg-brand w-full transition-all duration-1000 ease-out"
-                  ></div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="skeleton-layer hidden absolute inset-0 bg-white p-6 group-[.is-loading]:flex flex-col justify-between z-10"
-            >
-              <div class="flex justify-between items-end mb-4 animate-pulse">
-                <div>
-                  <p class="h-5 w-12 bg-gray-200 rounded mb-2"></p>
-                  <h3 class="h-8 w-20 my-6 bg-gray-200 rounded"></h3>
-                </div>
-                <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
-              </div>
-              <div class="w-full h-2 bg-gray-100 rounded-full animate-pulse">
-                <div class="h-full bg-gray-200 w-[70%]"></div>
-              </div>
-            </div>
-          </div>
-          <div
-            data-active="false"
-            class="card group observe reveal flex-shrink-0 w-[80vw] md:w-[40vw] bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl translate-y-20 relative overflow-hidden p-6 shadow-lg cursor-pointer transition-all data-[active=true]:shadow-lg data-[active=true]:-translate-y-3"
-          >
-            <div
-              class="card-content group-[.is-loading]:opacity-0 transition-opacity"
-            >
-              <div class="tit-wrap flex justify-between items-start mb-4">
-                <div class="card-tit">
-                  <p class="text-xs text-gray-500 mb-1">평균 순위</p>
-                  <div class="flex items-end gap-2 mb-2">
-                    <h3 class="text-3xl font-bold text-brand leading-none mb-0">
-                      4.4
-                    </h3>
-                    <span class="text-[10px] text-gray-400">이전 5.0</span>
-                  </div>
-                </div>
-                <div
-                  class="icon w-10 h-10 bg-sub-brand rounded-lg flex items-center justify-center text-lg"
-                >
-                  🏅
                 </div>
               </div>
 
-              <div class="mt-6">
-                <div class="flex justify-between items-end mb-1.5">
-                  <span class="text-[11px] font-bold text-brand">0.6 상승</span>
+              <div
+                class="skeleton-layer hidden absolute inset-0 bg-white p-6 group-[.is-loading]:flex flex-col justify-between z-10"
+              >
+                <div class="flex justify-between items-end mb-4 animate-pulse">
+                  <div>
+                    <p class="h-5 w-12 bg-gray-200 rounded mb-2"></p>
+                    <h3 class="h-8 w-20 my-6 bg-gray-200 rounded"></h3>
+                  </div>
+                  <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+                </div>
+                <div class="w-full h-2 bg-gray-100 rounded-full animate-pulse">
+                  <div class="h-full bg-gray-200 w-[70%]"></div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-active="false"
+              class="card group observe reveal flex-shrink-0 w-[80vw] md:w-[40vw] bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl translate-y-20 relative overflow-hidden p-6 shadow-lg cursor-pointer transition-all data-[active=true]:shadow-lg data-[active=true]:-translate-y-3"
+            >
+              <div
+                class="card-content group-[.is-loading]:opacity-0 transition-opacity"
+              >
+                <div class="tit-wrap flex justify-between items-start mb-4">
+                  <div class="card-tit">
+                    <p class="text-xs text-gray-500 mb-1">평균 순위</p>
+                    <div class="flex items-end gap-2 mb-2">
+                      <h3
+                        class="text-3xl font-bold text-brand leading-none mb-0"
+                      >
+                        4.4
+                      </h3>
+                      <span class="text-[10px] text-gray-400">이전 5.0</span>
+                    </div>
+                  </div>
                   <div
-                    class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sub-brand text-brand text-[11px] font-bold"
+                    class="icon w-10 h-10 bg-sub-brand rounded-lg flex items-center justify-center text-lg"
                   >
-                    ▲ 0.6
+                    🏅
                   </div>
                 </div>
-                <div
-                  class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden"
-                >
-                  <div
-                    class="h-full bg-brand w-full transition-all duration-1000 ease-out"
-                  ></div>
-                </div>
-              </div>
-            </div>
 
-            <div
-              class="skeleton-layer hidden absolute inset-0 bg-white p-6 group-[.is-loading]:flex flex-col justify-between z-10"
-            >
-              <div class="flex justify-between items-end mb-4 animate-pulse">
-                <div>
-                  <p class="h-5 w-12 bg-gray-200 rounded mb-2"></p>
-                  <h3 class="h-8 w-20 my-6 bg-gray-200 rounded"></h3>
+                <div class="mt-6">
+                  <div class="flex justify-between items-end mb-1.5">
+                    <span class="text-[11px] font-bold text-brand"
+                      >0.6 상승</span
+                    >
+                    <div
+                      class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sub-brand text-brand text-[11px] font-bold"
+                    >
+                      ▲ 0.6
+                    </div>
+                  </div>
+                  <div
+                    class="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-brand w-full transition-all duration-1000 ease-out"
+                    ></div>
+                  </div>
                 </div>
-                <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
               </div>
-              <div class="w-full h-2 bg-gray-100 rounded-full animate-pulse">
-                <div class="h-full bg-gray-200 w-[70%]"></div>
+
+              <div
+                class="skeleton-layer hidden absolute inset-0 bg-white p-6 group-[.is-loading]:flex flex-col justify-between z-10"
+              >
+                <div class="flex justify-between items-end mb-4 animate-pulse">
+                  <div>
+                    <p class="h-5 w-12 bg-gray-200 rounded mb-2"></p>
+                    <h3 class="h-8 w-20 my-6 bg-gray-200 rounded"></h3>
+                  </div>
+                  <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
+                </div>
+                <div class="w-full h-2 bg-gray-100 rounded-full animate-pulse">
+                  <div class="h-full bg-gray-200 w-[70%]"></div>
+                </div>
               </div>
             </div>
           </div>
