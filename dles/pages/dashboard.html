@@ -11,15 +11,14 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: '#337320', // 기본 브랜드 컬러 (Blue 500)
-                        'sub-brand': '#F5F7FB', // 브랜드 연한 배경 (Blue 100)
+                        brand: '#a09140', 
+                        'sub-brand': '#F5F7FB',
                     }
                 }
             }
         }
     </script>
     <style>
-        /* 부드러운 스크롤 효과 */
         html { scroll-behavior: smooth; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
     </style>
@@ -32,7 +31,7 @@
     </header>
 
     <main class="max-w-[1520px] mx-auto px-5 md:px-10">
-        
+        <!-- SEO 전 후 비교 썸네일 -->
         <section class="mb-32">
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 mb-10">
                 <div class="reveal opacity-0 translate-y-10 transition-all duration-700">
@@ -55,7 +54,7 @@
                 <p class="mt-3 text-gray-400 text-[14px] text-center">전체 데이터 추이 (2024.11.10 ~ 2026.03.12)</p>
             </div>
         </section>
-
+        <!-- 카드 가로 스크롤 -->
         <section id="horizontal-section" class="relative h-[300vh] -mx-5 md:-mx-10">
             <div class="sticky top-0 h-screen flex items-center overflow-hidden bg-slate-100 dark:bg-slate-900 transition-colors duration-500">
                 <div id="horizontal-track" class="flex gap-10 px-[10vw] will-change-transform transition-transform duration-75 ease-out">
@@ -129,22 +128,22 @@
                 </div>
             </div>
         </section>
-
+        <!--성능 섹션-->
         <section id="dashboard" class="py-32">
             <h2 class="text-2xl font-bold mb-10 text-center">Lighthouse 성능 최적화 결과</h2>
             
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 mb-12">
                 <div class="reveal mx-auto opacity-0 transition-all duration-700">
-                    <img src="../img/performance-before.png" alt="최적화 전" class="rounded-xl shadow-sm border border-gray-200 dark:border-slate-800">
+                    <img src="../img/performance-before.png" alt="최적화 전" class="rounded-xl shadow-sm border border-gray-200">
                     <p class="text-center text-gray-400 text-sm mt-4">최적화 전 (~2025.11.26)</p>
                 </div>
                 <div class="reveal  mx-auto opacity-0 transition-all duration-700 delay-200">
-                    <img src="../img/performance-after.png" alt="최적화 후" class="rounded-xl shadow-sm border border-gray-200 dark:border-slate-800">
+                    <img src="../img/performance-after.png" alt="최적화 후" class="rounded-xl shadow-sm border border-gray-200">
                     <p class="text-center text-gray-400 text-sm mt-4">최적화 후 (~2026.02.03)</p>
                 </div>
             </div>
 
-            <div class="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 dark:border-slate-700">
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="space-y-8">
                         <div>
@@ -152,7 +151,7 @@
                                 <span class="font-medium">성능 (Performance)</span>
                                 <span class="text-brand font-bold">▲ 34</span>
                             </div>
-                            <div class="w-full h-2 bg-gray-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
                                 <div class="progress-bar h-full bg-brand w-0 transition-all duration-[1.5s]" data-width="45%"></div>
                             </div>
                         </div>
@@ -161,7 +160,7 @@
                                 <span class="font-medium">접근성 (Accessibility)</span>
                                 <span class="text-brand font-bold">▲ 6</span>
                             </div>
-                            <div class="w-full h-2 bg-gray-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
                                 <div class="progress-bar h-full bg-brand w-0 transition-all duration-[1.5s]" data-width="90%"></div>
                             </div>
                         </div>
@@ -172,7 +171,7 @@
                                 <span class="font-medium">권장사항 (Best Practices)</span>
                                 <span class="text-brand font-bold">▲ 31</span>
                             </div>
-                            <div class="w-full h-2 bg-gray-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
                                 <div class="progress-bar h-full bg-brand w-0 transition-all duration-[1.5s]" data-width="77%"></div>
                             </div>
                         </div>
@@ -181,7 +180,7 @@
                                 <span class="font-medium">검색엔진 최적화 (SEO)</span>
                                 <span class="text-brand font-bold">▲ 15</span>
                             </div>
-                            <div class="w-full h-2 bg-gray-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
                                 <div class="progress-bar h-full bg-brand w-0 transition-all duration-[1.5s]" data-width="100%"></div>
                             </div>
                         </div>
@@ -192,9 +191,10 @@
     </main>
 
     <script>
-        // 1. 공통 등장 애니메이션 (Intersection Observer)
+        //  공통 등장 애니메이션 
         const revealCallback = (entries, observer) => {
             entries.forEach(entry => {
+                // entry.isIntersecting: 요소가 화면에 들어왔다면 (True)
                 if (entry.isIntersecting) {
                     entry.target.classList.remove('opacity-0', 'translate-y-10');
                     entry.target.classList.add('opacity-100', 'translate-y-0');
@@ -210,30 +210,39 @@
             });
         };
 
+        //IntersectionObserver : 브라우저가 제공하는 기능. 지정한 요소가 화면(Viewport)에 들어왔는지 감시
+        //revealCallback : 화면에 들어왔을 때 실행할 행동 지침
         const revealObserver = new IntersectionObserver(revealCallback, { threshold: 0.2 });
+        //클래스가 .reveal이거나 .card인 것, 그리고 ID가 #dashboard인 모든 요소를 찾음.
+        //observe(el)를 통해 카메라(Observer)에게 "이 요소를 감시 리스트에 추가해!"라고 명령
         document.querySelectorAll('.reveal, .card, #dashboard').forEach(el => revealObserver.observe(el));
 
         
 
-        // 3. 가로 스크롤 로직 개선
+        //  가로 스크롤 
         const wrapper = document.querySelector("#horizontal-section");
         const track = document.querySelector("#horizontal-track");
 
         window.addEventListener("scroll", () => {
+            //offsetTop : 가로 스크롤 섹션(wrapper)이 문서 맨 위에서부터 몇 픽셀 아래에 있는지 나타냄.
             const offsetTop = wrapper.offsetTop;
+            //scrollTop : 현재 사용자가 페이지를 얼마나 아래로 내렸는지 나타
             const scrollTop = window.pageYOffset;
+            //distance : 사용자가 가로 섹션에 진입한 후 추가로 얼마나 더 내려왔는지 계산한 값
             const distance = scrollTop - offsetTop;
+            // scrollRange: 실제로 가로 이동이 일어날 전체 길이를 정함. 섹션 전체 높이 - 화면 높이로 설정
             const scrollRange = wrapper.offsetHeight - window.innerHeight;
 
             if (distance >= 0 && distance <= scrollRange) {
                 // 트랙이 이동할 총 거리 계산 (트랙 너비 - 화면 너비)
+                //가로로 긴 트랙(track)이 왼쪽으로 최대 얼마나 밀려나야 하는지 계산. 전체 트랙 길이에서 현재 내 화면 너비를 뺀 값
                 const moveAmount = track.scrollWidth - window.innerWidth;
                 const moveX = (distance / scrollRange) * (moveAmount + (window.innerWidth * 0.1)); 
                 track.style.transform = `translateX(-${moveX}px)`;
             }
         });
 
-        // 4. 스켈레톤 UI (선택사항: 데이터 로딩 흉내)
+        // 스켈레톤 UI 
         document.querySelectorAll('.card').forEach(card => {
             card.classList.add('animate-pulse');
             setTimeout(() => card.classList.remove('animate-pulse'), 1000);

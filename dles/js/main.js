@@ -1,21 +1,4 @@
 /* 메인비주얼 애니메이션 */
-/*
-setTimeout(function () {
-  $(".visual-dimmed").addClass("show");
-}, 100);
-setTimeout(function () {
-  $(".main-visual .main-visual-title .visual-txt-ani").addClass("active");
-}, 2800);
-setTimeout(function () {
-  $(".main-visual .main-visual-title .visual-txt-motion > img").addClass(
-    "rotate",
-  );
-}, 3000);
-
-setTimeout(function () {
-  $(".main-visual .scroll-down").addClass("on");
-}, 4200);
-*/
 /* async/await 방식 */
 const delay = (ms) => new Promise(resolve => setTimeout(resolve,ms));
 async function startVisualAnimation() {
@@ -108,24 +91,6 @@ $(document).ready(function () {
 
   /* 메인 슬라이드 배너 */
   $(".main-visual").css("opacity", "1");
-
-  /* skill 애니메이션 */
-  $(".skill-box .skill").each(function () {
-    skillOption = {
-      animate: {
-        duration: 5000, // 애니메이션 시간
-        enabled: true,
-      },
-      barColor: "#b53720", // 바 색상
-      scaleColor: false,
-      lineWidth: 8, // 선두께
-      lineCap: "round", //  선끝 모양
-      size: 90, // 크기
-    };
-    $(".skill1").easyPieChart(skillOption);
-    $(".skill2").easyPieChart(skillOption);
-    $(".skill3").easyPieChart(skillOption);
-  });
 
   /* 흐르는 텍스트 */
   $(".flow-line-box").each(function () {
