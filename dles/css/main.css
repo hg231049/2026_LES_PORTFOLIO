@@ -497,6 +497,13 @@ details[open] .description {
   color: #121212;
   line-height: 1.8;
 }
+.competency .description .view-btn { display: block; margin-top:30px;
+    border: 1px solid #eee;
+    text-align: center;
+    transition: 0.4s ease; cursor: pointer; }
+    .competency .description .view-btn a { display: block; padding: 10px 0; color: var(--main-color); }
+    .competency .description .view-btn:hover { background:  var(--main-color); }
+    .competency .description .view-btn:hover a { color: #fff; }
 /* 띠 배너 */
 .flow-line-box {
   white-space: nowrap;
