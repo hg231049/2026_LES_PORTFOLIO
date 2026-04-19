@@ -1045,7 +1045,7 @@ details[open] .description {
   }
   /* etc 프로젝트 */
   .etc-project-wrap .etc-box .prdList > li .etc-slide .description > ul {
-    padding-top: 15px;
+    padding: 15px 0 0 20px;
     font-size: 16px;
     font-weight: 400;
     text-align: left;
@@ -1090,6 +1090,11 @@ details[open] .description {
   }
   .etc-project-wrap .etc-box .prdList {
     margin: 0;
+    gap: 40px;
+  }
+  .etc-project-wrap .etc-box .prdList > li {
+    width: 100%;
+    padding: 0 20px;
   }
   .etc-project-wrap .etc-box .prdList > li .etc-slide {
     padding: 0;
@@ -1137,6 +1142,7 @@ details[open] .description {
     .description {
     width: 100%;
   }
+
   .etc-project-wrap .thumb-wrap {
     width: 89%;
   }
