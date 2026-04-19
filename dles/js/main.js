@@ -1,6 +1,6 @@
 /* 메인비주얼 애니메이션 */
 /* async/await 방식 */
-const delay = (ms) => new Promise(resolve => setTimeout(resolve,ms));
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 async function startVisualAnimation() {
   await delay(100);
   $(".visual-dimmed").addClass("show");
@@ -9,14 +9,14 @@ async function startVisualAnimation() {
   $(".main-visual .main-visual-title .visual-txt-ani").addClass("active");
 
   await delay(200);
-  $(".main-visual .main-visual-title .visual-txt-motion > img").addClass("rotate");
+  $(".main-visual .main-visual-title .visual-txt-motion > img").addClass(
+    "rotate",
+  );
 
   await delay(1200);
   $(".main-visual .scroll-down").addClass("on");
-
 }
 startVisualAnimation();
-
 
 /* 메인 애니메이션 */
 function animateM($item) {
@@ -102,23 +102,7 @@ $(document).ready(function () {
     }
   });
 
-  /* 메인프로젝트 모션 */
-  $(".project-box").each(function () {
-    $(this)
-      .children(".bn")
-      .each(function () {
-        $(this).addClass("_transXR");
-        $(this).addClass("ani10");
-      });
-    $(this)
-      .children(".project-desc-box")
-      .each(function () {
-        $(this).addClass("_transXL");
-        $(this).addClass("ani10");
-      });
-  });
-
-  /* etc-slide의 팝업(상세) 이미지 열기 */
+  /* 팝업(상세) 이미지 열기 */
   $(".etc-project-wrap .etc-box .prdList > li .etc-slide .thumbnail").each(
     function () {
       var thumbSrc = $(this).children(".thumb-detail").find("img");
@@ -136,6 +120,22 @@ $(document).ready(function () {
       });
     },
   );
+
+  /* 메인프로젝트 모션 */
+  $(".project-box").each(function () {
+    $(this)
+      .children(".bn")
+      .each(function () {
+        $(this).addClass("_transXR");
+        $(this).addClass("ani10");
+      });
+    $(this)
+      .children(".project-desc-box")
+      .each(function () {
+        $(this).addClass("_transXL");
+        $(this).addClass("ani10");
+      });
+  });
 
   /* contac 상단 흐르는 배경 */
   $(".contact-wrap .contact-bg").each(function () {
