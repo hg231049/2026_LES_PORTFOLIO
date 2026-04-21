@@ -77,7 +77,7 @@ function mainSizeListener() {
 	if ( $(window).outerWidth() <= 1024) {
 		initSwiper(false, 0, 1);
 	} else {
-		initSwiper(true, 0, 2.5);
+		initSwiper(true, 0, 1);
 	}
 }
 

@@ -676,6 +676,10 @@ details[open] .description {
   opacity: 0.6;
 }
 .etc-project-wrap .etc-box .prdList > li .etc-slide {
+    display: flex;
+    gap: 8%;
+    align-items: flex-end;
+    justify-content: center;
   width: 100%;
   margin: 0 auto;
   padding: 0 3.705%;
@@ -683,14 +687,13 @@ details[open] .description {
 .etc-project-wrap .etc-box .prdList > li .etc-slide .thumbnail {
   position: relative;
 }
-
+.etc-project-wrap .etc-box .prdList > li .etc-slide .thumbnail .thumb { display: block; max-width: 580px; }
 .etc-project-wrap .etc-box .prdList > li .etc-slide .thumbnail .thumb img {
   width: 100%;
 }
 .etc-project-wrap .etc-box .prdList > li .etc-slide .description {
   padding: 40px 0 0;
   color: var(--sub-color);
-  text-align: center;
 }
 .etc-project-wrap .etc-box .prdList > li .etc-slide .description > * {
   line-height: 1.8;
@@ -710,6 +713,7 @@ details[open] .description {
   padding-top: 20px;
   font-size: 16px;
   font-weight: 400;
+  list-style-type: circle;
 }
 .etc-project-wrap .etc-box .prdList > li.swiper-slide-active {
   opacity: 1;
@@ -728,7 +732,8 @@ details[open] .description {
   box-shadow: 1px 1px 11px rgba(138, 138, 138, 0.8);
   z-index: 999;
 }
-
+.etc-project-wrap .etc-box .prdList > li .btn-box { justify-content: flex-start; }
+.etc-project-wrap .etc-box .prdList > li .btn-box > div { margin: 0; }
 .etc-project-wrap .etc-box .prdList > li.swiper-slide-active .description {
   display: block;
 }
@@ -1030,6 +1035,7 @@ details[open] .description {
     height: 58%;
   }
   /* etc 프로젝트 */
+ .etc-project-wrap .etc-box .prdList > li .etc-slide {    flex-wrap: wrap; gap:0;}
   .etc-project-wrap .etc-box .prdList > li .etc-slide .description > ul {
     padding: 15px 0 0 20px;
     font-size: 16px;
