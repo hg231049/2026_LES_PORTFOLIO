@@ -666,16 +666,14 @@ details[open] .description {
 .etc-project-wrap .etc-box .prdList {
   display: flex;
   align-items: flex-start;
-  flex-wrap: wrap;
 }
 .etc-project-wrap .etc-box .prdList > li {
   display: flex;
   position: relative;
-  width: 50%;
   margin: 0;
   box-sizing: border-box;
   transition: 0.4s ease-in-out;
-  /*opacity: 0.6;*/
+  opacity: 0.6;
 }
 .etc-project-wrap .etc-box .prdList > li .etc-slide {
   width: 100%;
@@ -685,11 +683,7 @@ details[open] .description {
 .etc-project-wrap .etc-box .prdList > li .etc-slide .thumbnail {
   position: relative;
 }
-.etc-project-wrap .etc-box .prdList > li .etc-slide .thumbnail .thumb {
-  display: block;
-  max-height: 420px;
-  overflow: hidden;
-}
+
 .etc-project-wrap .etc-box .prdList > li .etc-slide .thumbnail .thumb img {
   width: 100%;
 }
@@ -718,10 +712,10 @@ details[open] .description {
   font-weight: 400;
 }
 .etc-project-wrap .etc-box .prdList > li.swiper-slide-active {
-  width: 40%;
   opacity: 1;
 }
 .etc-project-wrap .etc-box .prdList > li .etc-slide .thumbnail::after {
+  display: none;
   content: "";
   position: absolute;
   bottom: 15px;
@@ -734,15 +728,7 @@ details[open] .description {
   box-shadow: 1px 1px 11px rgba(138, 138, 138, 0.8);
   z-index: 999;
 }
-.etc-project-wrap
-  .etc-box
-  .prdList
-  > li.swiper-slide-active
-  .etc-slide
-  .thumbnail
-  .thumb {
-  max-height: 380px;
-}
+
 .etc-project-wrap .etc-box .prdList > li.swiper-slide-active .description {
   display: block;
 }
@@ -821,14 +807,14 @@ details[open] .description {
 .etc-project-wrap .swiper-rtl .swiper-button-next:after {
   display: none;
 }
-/*.etc-project-wrap .swiper-control .swiper-button-prev {
+.etc-project-wrap .swiper-control .swiper-button-prev {
   left: 0;
   background: url("../img/etc-prev-btn.png") no-repeat 100%;
 }
 .etc-project-wrap .swiper-control .swiper-button-next {
   right: 0;
   background: url("../img/etc-next-btn.png") no-repeat 100%;
-}*/
+}
 /* contact */
 .contact-wrap {
   position: relative;
@@ -1090,7 +1076,6 @@ details[open] .description {
   }
   .etc-project-wrap .etc-box .prdList {
     margin: 0;
-    gap: 40px;
   }
   .etc-project-wrap .etc-box .prdList > li {
     width: 100%;
@@ -1111,16 +1096,7 @@ details[open] .description {
     width: 100%;
     height: auto;
   }
-  .etc-project-wrap .etc-box .prdList > li .etc-slide .thumbnail .thumb,
-  .etc-project-wrap
-    .etc-box
-    .prdList
-    > li.swiper-slide-active
-    .etc-slide
-    .thumbnail
-    .thumb {
-    height: 300px;
-  }
+
   .etc-project-wrap .etc-box .prdList > li.swiper-slide-active {
     width: auto;
     opacity: 1;
